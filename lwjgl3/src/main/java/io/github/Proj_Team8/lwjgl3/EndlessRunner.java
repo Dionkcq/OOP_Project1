@@ -78,8 +78,6 @@ public class EndlessRunner extends ApplicationAdapter {
         gameScene = new GameScene(entityManager, highScore);
         sceneManager.setGameScene(gameScene);
         inputOutputManager.playBackgroundMusic();
-
-
         newGame = false;
     }
 
