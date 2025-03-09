@@ -34,17 +34,29 @@ public class StartMenuScene {
         } catch (Exception e) {
             skin = new Skin();
         }
+        
+        float viewportWidth = stage.getViewport().getWorldWidth();
+        float viewportHeight = stage.getViewport().getWorldHeight();
 
         titleLabel = new Label("START MENU", skin);
-        titleLabel.setPosition(Gdx.graphics.getWidth() / 2f - 50, Gdx.graphics.getHeight() - 50);
+        //titleLabel.setPosition(Gdx.graphics.getWidth() / 2f - 50, Gdx.graphics.getHeight() - 50);
+        titleLabel.setPosition(viewportWidth / 2f - 50, viewportHeight / 2f + 100);
 
         startButton = new TextButton("Start Game", skin);
         startButton.setSize(200, 50);
-        startButton.setPosition(Gdx.graphics.getWidth() / 2f - 100, Gdx.graphics.getHeight() / 2f + 50);
+        //startButton.setPosition(Gdx.graphics.getWidth() / 2f - 100, Gdx.graphics.getHeight() / 2f + 50);
+        startButton.setPosition(viewportWidth / 2f - 100, viewportHeight / 2f + 50);
 
         exitButton = new TextButton("Exit", skin);
         exitButton.setSize(200, 50);
-        exitButton.setPosition(Gdx.graphics.getWidth() / 2f - 100, Gdx.graphics.getHeight() / 2f - 50);
+        //exitButton.setPosition(Gdx.graphics.getWidth() / 2f - 100, Gdx.graphics.getHeight() / 2f - 50);
+        exitButton.setPosition(viewportWidth / 2f - 100, viewportHeight / 2f - 50);
+        
+   
+   
+        
+        
+       
 
         startButton.addListener(new ChangeListener() {
             @Override
@@ -72,6 +84,14 @@ public class StartMenuScene {
     public void setSceneManager(SceneManager sceneManager) {
         this.sceneManager = sceneManager;
     }
+    
+    
+    public void resize(int width, int height) {
+        stage.getViewport().update(width, height, true);
+        startButton.setPosition(stage.getViewport().getWorldWidth() / 2f - 100, stage.getViewport().getWorldHeight() / 2f + 50);
+        exitButton.setPosition(stage.getViewport().getWorldWidth() / 2f - 100, stage.getViewport().getWorldHeight() / 2f - 50);
+        titleLabel.setPosition(stage.getViewport().getWorldWidth() / 2f - 50, stage.getViewport().getWorldHeight() / 2f + 100);
+    }
 
     /**
      * Render the start menu if active.
@@ -79,7 +99,7 @@ public class StartMenuScene {
     public void render(SpriteBatch batch) {
         if (active) {
             batch.begin();
-            batch.draw(backgroundTexture, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.draw(backgroundTexture, 0, 0, stage.getViewport().getWorldWidth(), stage.getViewport().getWorldHeight());
             batch.end();
 
             stage.act(Gdx.graphics.getDeltaTime());
@@ -116,3 +136,5 @@ public class StartMenuScene {
         skin.dispose();
     }
 }
+
+

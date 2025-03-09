@@ -6,7 +6,7 @@ import io.github.Proj_Team8.lwjgl3.classes.GameScene;
 import io.github.Proj_Team8.lwjgl3.classes.GameOverScene;
 
 public class SceneManager {
-    public enum GameState { MENU, GAMEPLAY, GAMEOVER }
+    public enum GameState { MENU, GAMEPLAY, GAMEOVER;}
 
     private GameState currentState;
     private StartMenuScene startMenuScene;
@@ -66,5 +66,19 @@ public class SceneManager {
         startMenuScene.dispose();
         gameScene.dispose();
         gameOverScene.dispose();
+    }
+
+    public void resize(int width, int height) {
+        switch (currentState) {
+            case MENU:
+                startMenuScene.resize(width, height);
+                break;
+            case GAMEPLAY:
+                gameScene.resize(width, height);
+                break;
+            case GAMEOVER:
+                gameOverScene.resize(width, height);
+                break;
+        }
     }
 }

@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class HighScore {
-    private int currentScore;
+    private float currentScore;
     private int highScore;
     private BitmapFont font;
 
@@ -15,7 +15,7 @@ public class HighScore {
     }
 
     public void updateScore(float deltaTime) {
-        currentScore += (int) (deltaTime * 100);
+        currentScore += (deltaTime * 100);
     }
 
     public void resetScore() {
@@ -24,18 +24,18 @@ public class HighScore {
 
     public void checkAndSaveHighScore() {
         if (currentScore > highScore) {
-            highScore = currentScore;
+            highScore = (int)currentScore;
             System.out.println("🔥 New High Score: " + highScore);
         }
     }
 
     public void render(SpriteBatch batch) {
-        font.draw(batch, "Score: " + currentScore, 20, 460);
+        font.draw(batch, "Score: " + (int)currentScore, 20, 460);
         font.draw(batch, "High Score: " + highScore, 20, 440);
     }
 
     public int getCurrentScore() {
-        return currentScore;
+        return (int)currentScore;
     }
 
     public int getHighScore() {

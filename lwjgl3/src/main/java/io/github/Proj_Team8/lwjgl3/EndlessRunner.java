@@ -37,6 +37,7 @@ public class EndlessRunner extends ApplicationAdapter {
         sharedFont = new BitmapFont(); // Create a shared BitmapFont
 
         soundManager = new SoundManager();
+
         inputOutputManager = new InputOutputManager(soundManager);
 
         // Create initial scenes.
@@ -76,6 +77,8 @@ public class EndlessRunner extends ApplicationAdapter {
         }
         gameScene = new GameScene(entityManager, highScore);
         sceneManager.setGameScene(gameScene);
+        inputOutputManager.playBackgroundMusic();
+
 
         newGame = false;
     }
@@ -126,4 +129,11 @@ public class EndlessRunner extends ApplicationAdapter {
         batch.dispose();
         sharedFont.dispose();
     }
+    
+    @Override
+    public void resize(int width, int height) {
+        sceneManager.resize(width, height);
+    }
 }
+
+
