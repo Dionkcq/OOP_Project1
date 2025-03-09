@@ -41,4 +41,9 @@ public class HighScore {
     public int getHighScore() {
         return highScore;
     }
+    //add score
+    public void addScore(int points) {
+        currentScore += points;
+    }
+
 }

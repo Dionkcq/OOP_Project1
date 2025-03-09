@@ -31,7 +31,8 @@ public class EntityManager {
 
         // Spawn a new obstacle if the timer exceeds the interval
         if (spawnTimer >= SPAWN_INTERVAL) {
-            spawnObstacle();
+            spawnObstacle();  
+            spawnHealthyFood(); 
             spawnTimer = 0;
         }
 
@@ -69,6 +70,26 @@ public class EntityManager {
             entities.add(new Bird(spawnX, spawnY));
         }
     }
+    
+    private void spawnHealthyFood() {
+        float spawnX = 800;  
+
+        if (random.nextBoolean()) { 
+
+            float spawnY = 75;
+            float width = 30 + random.nextFloat() * 20;
+            float height = random.nextFloat() * (100 - 50) + 50;
+
+            entities.add(new HealthyFood1(spawnX, spawnY, width, height));
+        } else {
+  
+            float spawnY = random.nextFloat() * (250 - 150) + 150; 
+            entities.add(new HealthyFood2(spawnX, spawnY));
+        }
+    }
+
+
+
 
     public Player getPlayer() {
         return player;
@@ -90,4 +111,9 @@ public class EntityManager {
         }
         entities.clear();
     }
+    
+    public void removeEntity(Entity entity) {
+        entities.remove(entity);
+    }
+
 }

@@ -1,10 +1,10 @@
 package io.github.Proj_Team8.lwjgl3.classes;
 
-public class Obstacle extends Entity implements Trap {
+public class HealthyFood1 extends Entity{
 	private static float baseSpeed = 300f; // Base speed for all obstacles
 
-    public Obstacle(float x, float y, float width, float height) {
-        super(x, y, width, height, "entity/coke.png");
+    public HealthyFood1(float x, float y, float width, float height) {
+        super(x, y, width, height, "entity/health_food1.png");
     }
 
     @Override

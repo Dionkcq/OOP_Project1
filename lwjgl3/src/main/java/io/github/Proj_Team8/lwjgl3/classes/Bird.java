@@ -4,7 +4,7 @@ public class Bird extends Entity implements Trap {
     private static float baseSpeed = 400f; // Base speed of all birds
 
     public Bird(float x, float y) {
-        super(x, y, 50, 30, "entity/bird.png");
+        super(x, y, 50, 30, "entity/bird2.png");
     }
 
     @Override

@@ -100,13 +100,23 @@ public class EndlessRunner extends ApplicationAdapter {
             movementManager.update(deltaTime);
             highScore.updateScore(deltaTime);
 
-            // On collision, update the high score, play game-over music, switch state, and mark for reset.
-            if (collisionManager.checkCollision(entityManager.getPlayer(), entityManager.getEntities())) {
-                highScore.checkAndSaveHighScore();
-                inputOutputManager.playGameOverMusic();
-                sceneManager.setState(SceneManager.GameState.GAMEOVER);
-                newGame = true;
+
+            Entity collidedEntity = collisionManager.getCollidedEntity(entityManager.getPlayer(), entityManager.getEntities());
+
+            if (collidedEntity != null) {
+                if (collidedEntity instanceof Obstacle) {
+                    highScore.checkAndSaveHighScore();
+                    inputOutputManager.playGameOverMusic();
+                    sceneManager.setState(SceneManager.GameState.GAMEOVER);
+                    newGame = true;
+                } else if (collidedEntity instanceof HealthyFood1 || collidedEntity instanceof HealthyFood2) {
+                    highScore.addScore(1000); 
+                    System.out.println("Collected Healthy Food! Score: " + highScore.getCurrentScore());
+                    entityManager.removeEntity(collidedEntity); 
+                }
             }
+
+
         }
 
         // Delegate rendering to the current scene.
