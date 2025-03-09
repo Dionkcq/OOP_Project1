@@ -104,13 +104,14 @@ public class EndlessRunner extends ApplicationAdapter {
             Entity collidedEntity = collisionManager.getCollidedEntity(entityManager.getPlayer(), entityManager.getEntities());
 
             if (collidedEntity != null) {
-                if (collidedEntity instanceof Obstacle) {
+                if (collidedEntity instanceof Obstacle || collidedEntity instanceof Bird) {
                     highScore.checkAndSaveHighScore();
                     inputOutputManager.playGameOverMusic();
                     sceneManager.setState(SceneManager.GameState.GAMEOVER);
                     newGame = true;
                 } else if (collidedEntity instanceof HealthyFood1 || collidedEntity instanceof HealthyFood2) {
                     highScore.addScore(1000); 
+                    inputOutputManager.scoreSound();
                     System.out.println("Collected Healthy Food! Score: " + highScore.getCurrentScore());
                     entityManager.removeEntity(collidedEntity); 
                 }

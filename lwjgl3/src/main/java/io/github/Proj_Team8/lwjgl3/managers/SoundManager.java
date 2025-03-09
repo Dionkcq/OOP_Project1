@@ -27,6 +27,9 @@ public class SoundManager implements Disposable {
         // Load game over music
         gameOverMusic = Gdx.audio.newMusic(Gdx.files.internal("sound/game-over.wav"));
         gameOverMusic.setLooping(false);
+        
+        // Load sound effects
+        sounds.put("collect", Gdx.audio.newSound(Gdx.files.internal("sound/score.wav")));
     }
     
     public void playSound(String soundkey) {
@@ -55,4 +58,5 @@ public class SoundManager implements Disposable {
         backgroundMusic.dispose();
         gameOverMusic.dispose();
     }
+    
 }
