@@ -1,3 +1,5 @@
 Is eating unhealthy food bad for your health?;True
 Is exercise important for health?;True
 Is sleeping late good for health?;False
+Is smoking good for your health?;False
+Does eating vegetables help improve your immune system?;True
