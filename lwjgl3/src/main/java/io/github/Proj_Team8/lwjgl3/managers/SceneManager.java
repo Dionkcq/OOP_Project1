@@ -3,22 +3,26 @@ package io.github.Proj_Team8.lwjgl3.managers;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import io.github.Proj_Team8.lwjgl3.classes.StartMenuScene;
 import io.github.Proj_Team8.lwjgl3.classes.GameScene;
+import io.github.Proj_Team8.lwjgl3.classes.QuestionScene;
 import io.github.Proj_Team8.lwjgl3.classes.GameOverScene;
 
+
 public class SceneManager {
-    public enum GameState { MENU, GAMEPLAY, GAMEOVER;}
+    public enum GameState { MENU, GAMEPLAY, QUESTION, GAMEOVER;}
 
     private GameState currentState;
     private StartMenuScene startMenuScene;
     private GameScene gameScene;
+    private QuestionScene questionScene;
     private GameOverScene gameOverScene;
     private SpriteBatch batch; // shared batch reference
 
     // Constructor: scenes are created externally and injected, plus the shared batch.
-    public SceneManager(SpriteBatch batch, StartMenuScene startMenuScene, GameScene gameScene, GameOverScene gameOverScene) {
+    public SceneManager(SpriteBatch batch, StartMenuScene startMenuScene, GameScene gameScene,QuestionScene questionScene, GameOverScene gameOverScene) {
         this.batch = batch;
         this.startMenuScene = startMenuScene;
         this.gameScene = gameScene;
+        this.questionScene = questionScene;
         this.gameOverScene = gameOverScene;
         this.currentState = GameState.MENU;
     }
@@ -41,6 +45,9 @@ public class SceneManager {
                 break;
             case GAMEPLAY:
                 gameScene.render(batch);
+                break;
+            case QUESTION:
+                questionScene.render(batch);
                 break;
             case GAMEOVER:
                 gameOverScene.render(batch);
@@ -65,6 +72,7 @@ public class SceneManager {
     public void dispose() {
         startMenuScene.dispose();
         gameScene.dispose();
+        questionScene.dispose();
         gameOverScene.dispose();
     }
 
@@ -75,6 +83,9 @@ public class SceneManager {
                 break;
             case GAMEPLAY:
                 gameScene.resize(width, height);
+                break;
+            case QUESTION:
+                questionScene.resize(width,height);
                 break;
             case GAMEOVER:
                 gameOverScene.resize(width, height);

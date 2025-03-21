@@ -23,6 +23,7 @@ public class EndlessRunner extends ApplicationAdapter {
     // Scenes
     private StartMenuScene startMenuScene;
     private GameScene gameScene;
+    private QuestionScene questionScene;
     private GameOverScene gameOverScene;
 
     // Scene Manager (for scene switching)
@@ -43,14 +44,16 @@ public class EndlessRunner extends ApplicationAdapter {
         // Create initial scenes.
         // Pass the shared batch to StartMenuScene so its Stage uses it.
         startMenuScene = new StartMenuScene(batch);
-        gameScene = null; // Will be (re)created when starting gameplay.
+        gameScene = null;// Will be (re)created when starting gameplay.
+        questionScene = new QuestionScene(sharedFont,null);
         gameOverScene = new GameOverScene(sharedFont, null); // SceneManager will be set later.
 
         // Create SceneManager with the shared batch and pre-created scenes.
-        sceneManager = new SceneManager(batch, startMenuScene, gameScene, gameOverScene);
+        sceneManager = new SceneManager(batch, startMenuScene, gameScene, questionScene, gameOverScene);
 
         // Inject the SceneManager into scenes that require it.
         startMenuScene.setSceneManager(sceneManager);
+        questionScene.setSceneManager(sceneManager);
         gameOverScene.setSceneManager(sceneManager);
 
         // Create highScore only once so that it persists across sessions.
@@ -107,7 +110,8 @@ public class EndlessRunner extends ApplicationAdapter {
                 if (collidedEntity instanceof Obstacle || collidedEntity instanceof Bird) {
                     highScore.checkAndSaveHighScore();
                     inputOutputManager.playGameOverMusic();
-                    sceneManager.setState(SceneManager.GameState.GAMEOVER);
+                    System.out.println("Switching to QUESTION state...");
+                    sceneManager.setState(SceneManager.GameState.QUESTION);
                     newGame = true;
                 } else if (collidedEntity instanceof HealthyFood1 || collidedEntity instanceof HealthyFood2) {
                     highScore.addScore(1000); 
@@ -130,6 +134,10 @@ public class EndlessRunner extends ApplicationAdapter {
         startMenuScene.dispose();
         if (gameScene != null) {
             gameScene.dispose();
+        }
+        questionScene.dispose();
+        if (entityManager != null) {
+            entityManager.dispose();
         }
         gameOverScene.dispose();
         if (entityManager != null) {

@@ -48,8 +48,10 @@ public class GameOverScene {
         // Draw the background to fill the entire viewport
         batch.draw(backgroundTexture, 0, 0, viewport.getWorldWidth(), viewport.getWorldHeight());
         // Draw texts at positions relative to the viewport's virtual dimensions
-        font.draw(batch, "GAME OVER", viewport.getWorldWidth() / 2f - 50, viewport.getWorldHeight() / 2f + 50);
-        font.draw(batch, "Press ESC to Return To Menu", viewport.getWorldWidth() / 2f - 100, viewport.getWorldHeight() / 2f - 10);
+        font.getData().setScale(2f);
+        font.draw(batch, "GAME OVER", viewport.getWorldWidth() / 2f - 90, viewport.getWorldHeight() / 2f + 50);
+        font.draw(batch, "Press ESC to Return To Menu", viewport.getWorldWidth() / 2f - 200, viewport.getWorldHeight() / 2f - 10);
+        font.getData().setScale(1f);
         batch.end();
 
         if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
