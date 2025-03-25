@@ -12,6 +12,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+
+import io.github.Proj_Team8.lwjgl3.EndlessRunner;
 import io.github.Proj_Team8.lwjgl3.managers.SceneManager;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Align;
@@ -152,6 +154,7 @@ public class QuestionScene {
             } else {
                 // If True is not correct, stay in the question scene or go to game over
                 sceneManager.setState(SceneManager.GameState.GAMEOVER);
+                ((EndlessRunner) Gdx.app.getApplicationListener()).resetGame();
             }
         }
         
@@ -165,6 +168,7 @@ public class QuestionScene {
             } else {
                 // If False is not correct, stay in the question scene or go to game over
                 sceneManager.setState(SceneManager.GameState.GAMEOVER);
+                ((EndlessRunner) Gdx.app.getApplicationListener()).resetGame();
             }
         }
         if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {

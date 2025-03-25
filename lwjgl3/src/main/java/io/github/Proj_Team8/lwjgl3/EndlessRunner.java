@@ -69,7 +69,7 @@ public class EndlessRunner extends ApplicationAdapter {
     }
 
     // Resets game logic and creates a new GameScene while resetting the current score.
-    private void resetGame() {
+    public void resetGame() {
         if (entityManager != null) {
             entityManager.dispose();
         }
