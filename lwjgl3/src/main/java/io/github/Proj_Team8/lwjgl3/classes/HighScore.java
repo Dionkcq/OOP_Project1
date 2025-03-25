@@ -1,5 +1,6 @@
 package io.github.Proj_Team8.lwjgl3.classes;
 
+
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -21,6 +22,11 @@ public class HighScore {
     public void resetScore() {
         currentScore = 0;
     }
+    
+    // NEW: Method to set the score to a specific value
+    public void setScore(float score) {
+        this.currentScore = score;
+    }
 
     public void checkAndSaveHighScore() {
         if (currentScore > highScore) {
@@ -41,9 +47,9 @@ public class HighScore {
     public int getHighScore() {
         return highScore;
     }
+    
     //add score
     public void addScore(int points) {
         currentScore += points;
     }
-
 }
