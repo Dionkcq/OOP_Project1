@@ -1,5 +1,105 @@
-Is eating unhealthy food bad for your health?;True
-Is exercise important for health?;True
-Is sleeping late good for health?;False
-Is smoking good for your health?;False
-Does eating vegetables help improve your immune system?;True
+Is 5 + 7 = 12?;True
+Is 9 - 4 = 6?;False
+Is 3 times 4 = 12?;True
+Is 20 divide 5 = 5?;False
+Is 8 + 3 = 11?;True
+Is 15 - 7 = 9?;False
+Is 6 times 7 = 42?;True
+Is 18 divide 3 = 5?;False
+Is 12 + 13 = 25?;True
+Is 21 - 8 = 12?;False
+Is 9 times 9 = 81?;True
+Is 100 divide 4 = 25?;True
+Is 17 + 8 = 26?;False
+Is 33 - 15 = 18?;True
+Is 7 times 8 = 54?;False
+Is 45 divide 9 = 5?;True
+Is 24 + 16 = 40?;True
+Is 38 - 19 = 21?;False
+Is 12 times 5 = 60?;True
+Is 72 divide 8 = 8?;False
+Is the heart responsible for pumping blood throughout the body?;True
+Is the human body made up of approximately 60% water?;True
+Is vitamin C found primarily in dairy products?;False
+Are carrots a good source of vitamin A?;True
+Does the average person breathe approximately 20,000 times per day?;True
+Is it healthy to skip breakfast regularly?;False
+Do apples contain more vitamin C than oranges?;False
+Is regular physical activity recommended for maintaining good health?;True
+Do vegetables have a higher calorie content than fatty foods?;False
+Should a person drink at least 8 glasses of water daily for optimal health?;True
+Is sugar good for your teeth?;False
+Are whole grains healthier than refined grains?;True
+Do dark green vegetables contain more nutrients than light colored vegetables?;True
+Is protein only found in meat products?;False
+Are trans fats considered healthy fats?;False
+Is eating fruits better than drinking fruit juice?;True
+Is sodium an essential nutrient for the body?;True
+Should adults get at least 7 hours of sleep each night?;True
+Is it better to eat three large meals than multiple small meals throughout the day?;False
+Does stress negatively impact your overall health?;True
+Is Earth the third planet from the Sun?;True
+Is the Atlantic Ocean larger than the Pacific Ocean?;False
+Is Jupiter the largest planet in our solar system?;True
+Does sound travel faster in water than in air?;True
+Was Albert Einstein born in Germany?;True
+Is the capital of Australia Sydney?;False
+Are there 365 days in a leap year?;False
+Is oxygen the most abundant element in Earth's atmosphere?;False
+Does the human body have 206 bones?;True
+Did Leonardo da Vinci paint the Sistine Chapel?;False
+Is Mount Everest the tallest mountain in the world?;True
+Was the first person to walk on the moon Neil Armstrong?;True
+Is the chemical symbol for gold Au?;True
+Does water boil at 100 degrees Fahrenheit at sea level?;False
+Is the Great Wall of China visible from space with the naked eye?;False
+Do sharks have bones?;False
+Are polar bears found in Antarctica?;False
+Is Mercury the closest planet to the Sun?;True
+Was Thomas Edison the inventor of the telephone?;False
+Is the Statue of Liberty located in Washington D.C.?;False
+Is 35 + 27 = 62?;True
+Is 50 - 16 = 36?;False
+Is 11 times 11 = 121?;True
+Is 200 divide 8 = 24?;False
+Is 73 + 19 = 92?;True
+Is 45 - 23 = 23?;False
+Is 13 times 7 = 91?;True
+Is 150 divide 6 = 25?;True
+Is 88 + 32 = 120?;True
+Is 60 - 45 = 25?;False
+Is 8 times 12 = 98?;False
+Is 81 divide 9 = 9?;True
+Is 130 - 65 = 65?;True
+Is 17 times 6 = 102?;True
+Is 44 + 56 = 90?;False
+Is 120 divide 12 = 10?;True
+Is 85 - 29 = 56?;True
+Is 14 times 5 = 70?;True
+Is 220 divide 11 = 22?;False
+Is 96 + 17 = 113?;True
+Is eating excessive fast food good for your health?;False
+Is broccoli a starchy vegetable?;False
+Does fish contain omega-3 fatty acids?;True
+Is it recommended to consume sugary drinks daily?;False
+Are eggs a good source of protein?;True
+Is it healthy to eat processed foods regularly?;False
+Do nuts contain healthy fats?;True
+Is it okay to exercise on an empty stomach?;True
+Should you brush your teeth immediately after consuming acidic foods?;False
+Is honey healthier than refined sugar?;True
+Is it good to have a varied diet?;True
+Is calcium only found in dairy products?;False
+Are artificial sweeteners better than regular sugar?;False
+Is fiber important for digestive health?;True
+Should fruits be washed before eating?;True
+Is it healthy to eat while watching TV?;False
+Are potatoes vegetables?;True
+Is it better to boil vegetables than fry them?;True
+Should you drink water before, during, and after exercise?;True
+Is it healthy to skip meals to lose weight?;False
+Is 99 + 132 = 231?;True
+Is 173 - 85 = 88?;True
+Is 24 times 8 = 196?;False
+Is 300 divide 15 = 20?;True
+Is 250 + 350 = 600?;True
