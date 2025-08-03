@@ -91,7 +91,7 @@ public class EndlessRunner extends ApplicationAdapter {
         newGame = false;
     }
     
-    // Method to reset game but preserve the Score
+    // Method to reset game but preserve the score
     private void resetGamePreserveScore() {
         if (entityManager != null) {
             entityManager.dispose();
