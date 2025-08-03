@@ -73,48 +73,36 @@ public class EntityManager {
     }
     
     private void spawnHealthyFood() {
-        float spawnX = 800;
-        float spawnY = 300;
-        boolean overlap;
-        int maxAttempts = 10; 
-        int attempts = 0;
+        float spawnX = 800;  
 
-        do {
-            overlap = false;
-            attempts++;
+        if (random.nextBoolean()) { 
 
+<<<<<<< HEAD
             if (random.nextBoolean()) { 
                 spawnY = 75; 
             } else {
                 spawnY = random.nextFloat() * (25) + 250;
             }
+=======
+            float spawnY = 75;
+            float width = 30 + random.nextFloat() * 20;
+            float height = random.nextFloat() * (100 - 50) + 50;
+>>>>>>> parent of 59665ea (update sound, duplicate bug)
 
-            // check for stack
-            for (Entity entity : entities) {
-                if ((entity instanceof Obstacle || entity instanceof Bird) && 
-                    Math.abs(entity.getBounds().y - spawnY) < 50) {
-                    overlap = true;
-                    break;
-                }
-            }
-
-            // more than 10 loop set y to 175
-            if (attempts >= maxAttempts && overlap) {
-                System.out.println("Warning: Could not find non-overlapping position for HealthyFood. Placing at y = 175.");
-                spawnY = 175;
-                overlap = false;
-            }
-
-        } while (overlap);
-
-        if (random.nextBoolean()) {
-            entities.add(new HealthyFood1(spawnX, spawnY, 40, 40)); 
+            entities.add(new HealthyFood1(spawnX, spawnY, width, height));
         } else {
-            entities.add(new HealthyFood2(spawnX, spawnY)); 
+  
+            float spawnY = random.nextFloat() * (250 - 150) + 150; 
+            entities.add(new HealthyFood2(spawnX, spawnY));
         }
     }
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of 59665ea (update sound, duplicate bug)
     public Player getPlayer() {
         return player;
     }

@@ -4,7 +4,7 @@ public class HealthyFood2 extends Entity{
 	 private static float baseSpeed = 400f; // Base speed of all birds
 
 	    public HealthyFood2(float x, float y) {
-	        super(x, y, 50, 50, "entity/health_food2.png");
+	        super(x, y, 50, 30, "entity/health_food2.png");
 	    }
 
 	    @Override

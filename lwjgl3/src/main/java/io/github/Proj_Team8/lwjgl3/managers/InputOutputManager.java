@@ -20,10 +20,6 @@ public class InputOutputManager {
             }
         }
     }
-    
-    public void scoreSound() {
-    	soundManager.playSound("collect");
-    }
 
     public void playBackgroundMusic() {
         soundManager.getBackgroundMusic().play();
