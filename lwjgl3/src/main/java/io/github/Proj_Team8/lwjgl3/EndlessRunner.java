@@ -32,10 +32,9 @@ public class EndlessRunner extends ApplicationAdapter {
     // Flag to indicate if a new game should be started.
     private boolean newGame = true;
     
-    // Flag to track if returning from question scene
+    // NEW: Flag to track if returning from question scene
     private boolean returningFromQuestion = false;
-    
-    // Variable to store score when going to question scene
+    // NEW: Variable to store score when going to question scene
     private float savedScore = 0;
 
     @Override
@@ -91,7 +90,7 @@ public class EndlessRunner extends ApplicationAdapter {
         newGame = false;
     }
     
-    // Method to reset game but preserve the score
+    // NEW: Method to reset game but preserve the score
     private void resetGamePreserveScore() {
         if (entityManager != null) {
             entityManager.dispose();
@@ -114,7 +113,7 @@ public class EndlessRunner extends ApplicationAdapter {
         newGame = false;
     }
     
-    // Method to save game state before going to question scene
+    // NEW: Method to save game state before going to question scene
     private void saveGameState() {
         savedScore = highScore.getCurrentScore();
         returningFromQuestion = true;

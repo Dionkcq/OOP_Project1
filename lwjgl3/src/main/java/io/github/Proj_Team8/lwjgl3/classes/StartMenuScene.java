@@ -93,8 +93,9 @@ public class StartMenuScene {
         titleLabel.setPosition(stage.getViewport().getWorldWidth() / 2f - 50, stage.getViewport().getWorldHeight() / 2f + 100);
     }
 
-    // Render the start menu if active.
-     
+    /**
+     * Render the start menu if active.
+     */
     public void render(SpriteBatch batch) {
         if (active) {
             batch.begin();
@@ -106,7 +107,9 @@ public class StartMenuScene {
         }
     }
 
-    // Enable/Disable input processor when entering/exiting scene.
+    /**
+     * Enable/Disable input processor when entering/exiting scene.
+     */
     private void setActive(boolean state) {
         active = state;
         if (active) {
@@ -116,8 +119,9 @@ public class StartMenuScene {
         }
     }
 
-    // Remove buttons when transitioning scenes.
-   
+    /**
+     * Remove buttons when transitioning scenes.
+     */
     private void disableButtons() {
         startButton.remove();
         exitButton.remove();
@@ -126,6 +130,7 @@ public class StartMenuScene {
 
     public void dispose() {
         disableButtons();
+        // Do NOT dispose the shared batch; the stage will not dispose it when created this way.
         stage.dispose();
         backgroundTexture.dispose();
         skin.dispose();

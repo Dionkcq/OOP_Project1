@@ -35,7 +35,9 @@ public class SceneManager {
         currentState = state;
     }
 
-    // Renders the active scene based on the current game state.
+    /**
+     * Renders the active scene based on the current game state.
+     */
     public void render(SpriteBatch batch) {
         switch (currentState) {
             case MENU:
@@ -53,7 +55,10 @@ public class SceneManager {
         }
     }
 
-    // Resets the Start Menu scene by disposing it and recreating it with the shared SpriteBatch.
+    /**
+     * Resets the Start Menu scene by disposing it and recreating it
+     * with the shared SpriteBatch.
+     */
     public void resetStartMenu() {
         startMenuScene.dispose();
         startMenuScene = new StartMenuScene(batch);

@@ -23,7 +23,7 @@ public class HighScore {
         currentScore = 0;
     }
     
-    // Method to set the score to a specific value
+    // NEW: Method to set the score to a specific value
     public void setScore(float score) {
         this.currentScore = score;
     }
