@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 public class EntityManager {
     private List<Entity> entities;
@@ -67,7 +66,7 @@ public class EntityManager {
             entities.add(new Obstacle(spawnX, spawnY, width, height));
         } else {
             // Spawn Bird
-            float spawnY = random.nextFloat() * (100) + 150; // Random height in the sky
+            float spawnY = random.nextFloat() * (250 - 150) + 150; // Random height in the sky
             entities.add(new Bird(spawnX, spawnY));
         }
     }
@@ -86,7 +85,7 @@ public class EntityManager {
             if (random.nextBoolean()) { 
                 spawnY = 75; 
             } else {
-                spawnY = random.nextFloat() * (25) + 250;
+                spawnY = random.nextFloat() * (250 - 150) + 150;
             }
 
             // check for stack
@@ -113,6 +112,11 @@ public class EntityManager {
             entities.add(new HealthyFood2(spawnX, spawnY)); 
         }
     }
+
+
+
+
+
 
 
     public Player getPlayer() {
